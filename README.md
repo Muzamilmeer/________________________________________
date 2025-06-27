@@ -24,7 +24,7 @@
   max-width: 600px;
   color: #fff;
   text-align: center;
-  animation: typing 20s steps(90, end), blink 0.75s step-end infinite;
+  animation: typing 30s steps(100, end), blink 0.75s step-end infinite;
   line-height: 1.5;
 }
 
