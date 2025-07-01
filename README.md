@@ -208,7 +208,7 @@
     box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
     transition: transform 0.3s;
   " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-    Continue
+    tap here and wait a few seconds 
   </button>
 </div>
 
