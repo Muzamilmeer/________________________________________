@@ -171,6 +171,7 @@
   </style>    
 </head>    
 <body>
+<body onload="playWelcome()">
 
 <!-- Splash Screen -->
 <div id="splash" style="
@@ -184,65 +185,44 @@
   align-items: center;
   z-index: 9999;
   flex-direction: column;
-  animation: fadeIn 1s ease-in-out;
 ">
   <img src="https://res.cloudinary.com/dxjkbpmgm/image/upload/v1744384921/IMG_20250411_202120_wx6x6n.png"
     alt="Logo"
-    style="width: 120px; height: 120px; border-radius: 20px; box-shadow: 0 0 25px #00ffff; animation: pulse 2s infinite;">
-
+    style="width: 130px; height: 130px; border-radius: 20px; box-shadow: 0 0 25px #00ffff; animation: pulse 5s infinite;">
+  <h1 style="color: #00ffff; font-family: 'Orbitron', sans-serif; margin-top: 20px; animation: fadeIn 7s;">
     
   </h1>
-  <button onclick="enterSite()" style="
-    margin-top: 30px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background: #00ffff;
-    color: #000;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00ffff;
-  ">
-    Tap to Enter
-  </button>
 </div>
 
-<!-- Audio -->
-<audio id="welcomeAudio">
+<!-- Welcome Sound -->
+<audio id="welcomeAudio" autoplay>
   <source src="https://res.cloudinary.com/dxjkbpmgm/video/upload/v1751381873/ttsMP3.com_VoiceText_2025-7-1_20-22-46_hcvby2.mp3" type="audio/mpeg">
 </audio>
 
-<!-- Script -->
 <script>
-  function enterSite() {
+  function playWelcome() {
     const audio = document.getElementById("welcomeAudio");
-    const splash = document.getElementById("splash");
-    const mainContent = document.getElementById("main-content");
+    audio.play();
+    setTimeout(() => {
+      document.getElementById("splash").style.display = "none";
+      document.getElementById("mainContent").style.display = "block";
+    }, 6000); // wait 6sec
+  }
+</script>
 
-    audio.play().catch(e => console.log("Autoplay blocked"));
-    splash.style.display = "none";
-    mainContent.style.display = "block";
-  
-  }
-</script>
-<script>
-  setTimeout(function () {
-    document.getElementById("splash").style.display = "none";
-  }, 3000); // 60 seconds
-</script>
 <style>
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
   @keyframes pulse {
     0% { transform: scale(1); box-shadow: 0 0 15px #00ffff; }
     50% { transform: scale(1.1); box-shadow: 0 0 30px #00ffff; }
     100% { transform: scale(1); box-shadow: 0 0 15px #00ffff; }
   }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 </style>
 
+</body>
 
   <header>    
     <div class="logo-section">    
