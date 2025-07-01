@@ -177,7 +177,7 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: #00fff;
+  background-color: #00ffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -185,7 +185,7 @@
   flex-direction: column;
 ">
   <img src="https://res.cloudinary.com/dxjkbpmgm/image/upload/v1744384921/IMG_20250411_202120_wx6x6n.png" alt="Logo" style="width: 120px; height: 120px; border-radius: 20px; box-shadow: 0 0 20px #00ffff;">
-  <h1 style="color: #00ffff; font-family: 'Orbitron', sans-serif; margin-top: 20px;">MUZAMIL STREETWEAR</h1>
+  <h1 style="color: #00ffff; font-family: 'Orbitron', sans-serif; margin-top: 20px;"></h1>
 </div>
 
 <script>
