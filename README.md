@@ -229,7 +229,7 @@
 <script>
   setTimeout(function () {
     document.getElementById("splash").style.display = "none";
-  }, 3000); // 3 seconds
+  }, 3000); // 60 seconds
 </script>
 <style>
   @keyframes fadeIn {
