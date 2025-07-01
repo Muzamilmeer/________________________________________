@@ -171,7 +171,6 @@
   </style>    
 </head>    
 <body>
-<body onload="playWelcome()">
 
 <!-- Splash Screen -->
 <div id="splash" style="
@@ -179,7 +178,7 @@
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: #000fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,26 +187,50 @@
 ">
   <img src="https://res.cloudinary.com/dxjkbpmgm/image/upload/v1744384921/IMG_20250411_202120_wx6x6n.png"
     alt="Logo"
-    style="width: 130px; height: 130px; border-radius: 20px; box-shadow: 0 0 25px #00ffff; animation: pulse 5s infinite;">
-  <h1 style="color: #00ffff; font-family: 'Orbitron', sans-serif; margin-top: 20px; animation: fadeIn 7s;">
-    
+    style="width: 130px; height: 130px; border-radius: 10px; box-shadow: 0 0 25px #00ffff; animation: pulse 2s infinite;">
+  
+  <h1 style="color: #00ffff; font-family: 'Orbitron', sans-serif; margin-top: 20px; animation: fadeIn 2s;">
+ 
   </h1>
+
+  <!-- Continue Button -->
+  <button id="continueBtn" style="
+    margin-top: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #00ffff;
+    color: #000;
+    font-weight: bold;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    transition: transform 0.3s;
+  " onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+    Continue
+  </button>
 </div>
 
-<!-- Welcome Sound -->
-<audio id="welcomeAudio" autoplay>
+<!-- Audio -->
+<audio id="welcomeAudio">
   <source src="https://res.cloudinary.com/dxjkbpmgm/video/upload/v1751381873/ttsMP3.com_VoiceText_2025-7-1_20-22-46_hcvby2.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-  function playWelcome() {
-    const audio = document.getElementById("welcomeAudio");
+  const splash = document.getElementById("splash");
+  const mainContent = document.getElementById("mainContent");
+  const audio = document.getElementById("welcomeAudio");
+  const continueBtn = document.getElementById("continueBtn");
+
+  continueBtn.addEventListener("click", function () {
     audio.play();
-    setTimeout(() => {
-      document.getElementById("splash").style.display = "none";
-      document.getElementById("mainContent").style.display = "block";
-    }, 6000); // wait 6sec
-  }
+
+    audio.addEventListener("ended", function () {
+      splash.style.display = "none";
+      mainContent.style.display = "block";
+    });
+  });
 </script>
 
 <style>
@@ -222,7 +245,8 @@
   }
 </style>
 
-</body>
+
+
 
   <header>    
     <div class="logo-section">    
