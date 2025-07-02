@@ -413,7 +413,7 @@ to { opacity: 1; transform: translateY(0); }
     if (i < txt.length) {      
       document.getElementById("typewriter").innerHTML += txt.charAt(i);      
       i++;      
-      setTimeout(type, 20);      
+      setTimeout(type, 140);      
     }      
   }      
   type();      
