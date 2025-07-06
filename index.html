@@ -472,6 +472,20 @@ window.addEventListener("beforeinstallprompt", (e) => {
   });
 });
                        </script>
+    <script>
+  // Step 1: Ask for permission
+  if ("Notification" in window && Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+      if (permission === "granted") {
+        // Step 2: Show notification
+        new Notification("🛍 Muzamil Streetwear", {
+          body: "🔥 Welcome! Don’t miss today’s latest drops. Check out our new arrivals now.",
+          icon: "https://res.cloudinary.com/dxjkbpmgm/image/upload/v1744384921/IMG_20250411_202120_wx6x6n.png" // Logo
+        });
+      }
+    });
+  }
+    </script>
 </div>      
 </div>      
 </div>       
