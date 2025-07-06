@@ -1,0 +1,15 @@
+{
+  "name": "Muzamil Streetwear",
+  "short_name": "Streetwear",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ffff",
+  "icons": [
+    {
+      "src": "https://res.cloudinary.com/dxjkbpmgm/image/upload/v1744384921/IMG_20250411_202120_wx6x6n.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
